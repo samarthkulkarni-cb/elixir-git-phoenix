@@ -36,3 +36,11 @@ iex -S mix phx.server
 
 Once you have entered the command the application would start and you can check and verify it at 'http://localhost:4001'
 
+## Common issues encountered while running the Elixir application
+
+One of the common issues you would encounter is trouble to connect with the database locally :
+
+To troubleshoot the issue, ensure the points in the checklist below:
+
+1. Make sure the details of database at pgadmin/postico/dbeaver are appropriate and verify it with dockercompose file in your local folder.
+2. Re-check the connection port number at both ends it should be either 54321 or 5432 at both sides.
