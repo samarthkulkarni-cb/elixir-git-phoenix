@@ -1,6 +1,8 @@
 defmodule ElixirGitPhoenixWeb.Router do
   use ElixirGitPhoenixWeb, :router
 
+  alias ElixirGitPhoenixWeb.UserController
+
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -14,10 +16,10 @@ defmodule ElixirGitPhoenixWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", ElixirGitPhoenixWeb do
-    pipe_through :browser
+  scope "/api" do
+    pipe_through :api
 
-    get "/", PageController, :home
+    resources "/users", UserController, except: [:new, :edit]
   end
 
   # Other scopes may use custom stacks.
