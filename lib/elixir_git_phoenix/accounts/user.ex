@@ -15,8 +15,8 @@ defmodule ElixirGitPhoenix.Accounts.User do
 
   def changeset(user,attrs) do
     user
-    |> cast(attrs, [:name, :email, :phone])
-    |> validate_required([:email, :phone])
-    |> unique_constraint([:phone])
+    |> cast(attrs, [:name, :email, :phone]) #passing the data fields through cast to be operated or updated upon in further operation and be called through attrs.
+    |> validate_required([:email, :phone]) #validating the required fields which needs to be genuine and valid per user record.
+    |> unique_constraint([:phone]) # unique constraint for required fields to avoid duplicacy in the table.
   end
 end
