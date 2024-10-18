@@ -9,6 +9,7 @@ defmodule ElixirGitPhoenix.Accounts.User do
     field :name, :string
     field :email, :string
     field :phone, :string
+    field :profession, :string
 
     timestamps(type: :utc_datetime)
   end
