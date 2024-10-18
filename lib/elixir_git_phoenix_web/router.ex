@@ -1,7 +1,7 @@
 defmodule ElixirGitPhoenixWeb.Router do
   use ElixirGitPhoenixWeb, :router
 
-  alias ElixirGitPhoenixWeb.UserController
+  alias ElixirGitPhoenixWeb.Controllers.UserController
 
   pipeline :browser do
     plug :accepts, ["html"]
