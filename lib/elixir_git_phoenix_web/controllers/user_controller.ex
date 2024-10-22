@@ -2,8 +2,9 @@ defmodule ElixirGitPhoenixWeb.UserController do
   use ElixirGitPhoenixWeb, :controller
 
   alias ElixirGitPhoenix.Accounts
-  alias ElixirGitPhoenix.Users.User
+  # alias ElixirGitPhoenix.Users.User
 
+  @spec index(Plug.Conn.t(), any()) :: Plug.Conn.t()
   def index(conn, _params) do
     users = Accounts.list_all_users()
     render(conn, "index.json", users: users)
@@ -29,7 +30,7 @@ defmodule ElixirGitPhoenixWeb.UserController do
   def delete(conn, %{"id" => id}) do
     user = Accounts.get_user!(id)
 
-    with {:ok, %User{}} <- Accounts.delete_user(user) do
+    with {:ok, _user} <- Accounts.delete_user(user) do
       send_resp(conn, :no_content, "")
     end
   end

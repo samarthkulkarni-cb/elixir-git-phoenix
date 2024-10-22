@@ -4,6 +4,7 @@ defmodule ElixirGitPhoenix.Accounts do
   alias ElixirGitPhoenix.Users.User
   alias ElixirGitPhoenix.Repo
 
+  @spec list_all_users() :: any()
   def list_all_users do
     Repo.all(User)
   end

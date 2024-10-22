@@ -10,13 +10,14 @@ defmodule ElixirGitPhoenix.Users.User do
     field :name, :string
     field :email, :string
     field :phone, :string
+    field :profession, :string
 
     timestamps(type: :utc_datetime)
   end
 
   def changeset(user, attrs) do
     user
-    |> cast(attrs, [:name, :email, :phone])
+    |> cast(attrs, [:name, :email, :phone, :profession])
     |> validate_required([:email, :phone])
     |> unique_constraint([:phone])
   end
