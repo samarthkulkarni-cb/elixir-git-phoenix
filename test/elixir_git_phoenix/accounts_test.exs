@@ -5,8 +5,6 @@ defmodule ElixirGitPhoenix.AccountsTest do
   alias ElixirGitPhoenix.Users.User
 
   describe "accounts" do
-    # import ElixirGitPhoenix.AccountsFixtures
-
     @invalid_attrs %{
       name: nil,
       email: nil,
@@ -65,15 +63,14 @@ defmodule ElixirGitPhoenix.AccountsTest do
       assert user == Accounts.get_user!(user.id)
       assert {:error, %Ecto.Changeset{}} = Accounts.update_user(user, @invalid_attrs)
     end
+  end
 
-    # test "delete_user/1 deletes the user with the given id" do
-    #   user = ElixirGitPhoenix.AccountsFixtures.user_fixture()
+  describe "delete_user/1" do
+    test "deletes the chosen user" do
+      user = ElixirGitPhoenix.AccountsFixtures.user_fixture()
 
-    #   assert {:ok, _deleted_user} = Accounts.delete_user(user)
-
-    #   assert_raise Ecto.NoResultsError, fn ->
-    #     Accounts.get_user!(user.id)
-    #   end
-    # end
+      assert user == Accounts.get_user!(user.id)
+      assert {:ok, _deleted_user} = Accounts.delete_user(user)
+    end
   end
 end

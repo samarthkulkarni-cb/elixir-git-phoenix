@@ -2,7 +2,6 @@ defmodule ElixirGitPhoenixWeb.UserController do
   use ElixirGitPhoenixWeb, :controller
 
   alias ElixirGitPhoenix.Accounts
-  # alias ElixirGitPhoenix.Users.User
 
   @spec index(Plug.Conn.t(), any()) :: Plug.Conn.t()
   def index(conn, _params) do
