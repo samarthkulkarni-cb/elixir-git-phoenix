@@ -9,12 +9,15 @@ defmodule ElixirGitPhoenix.AccountsFixtures do
   """
 
   def user_fixture(attrs \\ %{}) do
+    phone = "some_phone_#{System.unique_integer([:positive])}"
+
     {:ok, user} =
       attrs
       |> Enum.into(%{
         name: "some name",
-        phone: "some phone",
-        email: "some email"
+        phone: phone,
+        email: "some email",
+        profession: "some profession"
       })
       |> ElixirGitPhoenix.Accounts.create_user()
 
