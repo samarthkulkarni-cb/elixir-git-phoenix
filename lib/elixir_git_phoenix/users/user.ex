@@ -15,6 +15,7 @@ defmodule ElixirGitPhoenix.Users.User do
     field :bio, :string
     field :profile_image_url, :string
 
+    has_many :posts, ElixirGitPhoenix.Application.Posts
     timestamps(type: :utc_datetime)
   end
 
