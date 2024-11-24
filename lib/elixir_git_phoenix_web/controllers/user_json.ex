@@ -22,7 +22,7 @@ defmodule ElixirGitPhoenixWeb.UserJSON do
       name: user.name,
       email: user.email,
       phone: user.phone,
-      profession: user.profession,
+      # profession: user.profession,
       inserted_at: user.inserted_at,
       updated_at: user.updated_at
     }
