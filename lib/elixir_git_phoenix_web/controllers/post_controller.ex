@@ -1,7 +1,6 @@
 defmodule ElixirGitPhoenixWeb.PostController do
   use ElixirGitPhoenixWeb, :controller
 
-  alias Ecto.Changeset
   alias ElixirGitPhoenix.Posts
 
   def index(conn, _params) do
