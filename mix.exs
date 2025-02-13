@@ -1,9 +1,9 @@
-defmodule ElixirGitPhoenix.MixProject do
+defmodule ElixirPhoenixZeroToOne.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :elixir_git_phoenix,
+      app: :elixir_phoenix_zero_to_one,
       version: "0.1.0",
       elixir: "~> 1.14",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -18,7 +18,7 @@ defmodule ElixirGitPhoenix.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {ElixirGitPhoenix.Application, []},
+      mod: {ElixirPhoenixZeroToOne.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -38,6 +38,7 @@ defmodule ElixirGitPhoenix.MixProject do
       {:postgrex, ">= 0.0.0"},
       {:phoenix_html, "~> 4.1"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
+      {:uuidv7, "~> 1.0"},
       # TODO bump on release to {:phoenix_live_view, "~> 1.0.0"},
       {:phoenix_live_view, "~> 1.0.0-rc.1", override: true},
       {:floki, ">= 0.30.0", only: :test},
@@ -58,8 +59,7 @@ defmodule ElixirGitPhoenix.MixProject do
       {:gettext, "~> 0.20"},
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.1.1"},
-      {:bandit, "~> 1.5"},
-      {:uuidv7, "~> 0.2.1"}
+      {:bandit, "~> 1.5"}
     ]
   end
 
@@ -76,10 +76,13 @@ defmodule ElixirGitPhoenix.MixProject do
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
       "assets.setup": ["tailwind.install --if-missing", "esbuild.install --if-missing"],
-      "assets.build": ["tailwind elixir_git_phoenix", "esbuild elixir_git_phoenix"],
+      "assets.build": [
+        "tailwind elixir_phoenix_zero_to_one",
+        "esbuild elixir_phoenix_zero_to_one"
+      ],
       "assets.deploy": [
-        "tailwind elixir_git_phoenix --minify",
-        "esbuild elixir_git_phoenix --minify",
+        "tailwind elixir_phoenix_zero_to_one --minify",
+        "esbuild elixir_phoenix_zero_to_one --minify",
         "phx.digest"
       ]
     ]

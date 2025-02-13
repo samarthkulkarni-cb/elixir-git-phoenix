@@ -8,8 +8,8 @@ const path = require("path")
 module.exports = {
   content: [
     "./js/**/*.js",
-    "../lib/elixir_git_phoenix_web.ex",
-    "../lib/elixir_git_phoenix_web/**/*.*ex"
+    "../lib/elixir_phoenix_zero_to_one_web.ex",
+    "../lib/elixir_phoenix_zero_to_one_web/**/*.*ex"
   ],
   theme: {
     extend: {

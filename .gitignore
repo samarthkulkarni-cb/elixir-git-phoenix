@@ -23,7 +23,7 @@ erl_crash.dump
 /tmp/
 
 # Ignore package tarball (built via "mix hex.build").
-elixir_git_phoenix-*.tar
+elixir_phoenix_zero_to_one-*.tar
 
 # Ignore assets that are produced by build tools.
 /priv/static/assets/

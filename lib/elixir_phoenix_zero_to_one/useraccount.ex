@@ -1,0 +1,2 @@
+defmodule ChannelPlatform.ElixirPhoenixZeroToOne.UserAccount do
+end

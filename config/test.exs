@@ -5,23 +5,23 @@ import Config
 # The MIX_TEST_PARTITION environment variable can be used
 # to provide built-in test partitioning in CI environment.
 # Run `mix help test` for more information.
-config :elixir_git_phoenix, ElixirGitPhoenix.Repo,
+config :elixir_phoenix_zero_to_one, ElixirPhoenixZeroToOne.Repo,
   username: "postgres",
   password: "postgres",
   hostname: "localhost",
-  database: "elixir_git_phoenix_test#{System.get_env("MIX_TEST_PARTITION")}",
+  database: "elixir_phoenix_zero_to_one_test#{System.get_env("MIX_TEST_PARTITION")}",
   pool: Ecto.Adapters.SQL.Sandbox,
   pool_size: System.schedulers_online() * 2
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
-config :elixir_git_phoenix, ElixirGitPhoenixWeb.Endpoint,
+config :elixir_phoenix_zero_to_one, ElixirPhoenixZeroToOneWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
-  secret_key_base: "Hf0870xU2NBuCStSe1SBBDHeXwVVEHM9pOsSRQunFLJIgEXCDbO4aRGRn2YPXg9b",
+  secret_key_base: "l+qxbYjLJLik+7NaOu3YZMm/uXLiH2HifAz/RmqnRimGsoIR76Uu1xmrKcHzA/Qs",
   server: false
 
 # In test we don't send emails
-config :elixir_git_phoenix, ElixirGitPhoenix.Mailer, adapter: Swoosh.Adapters.Test
+config :elixir_phoenix_zero_to_one, ElixirPhoenixZeroToOne.Mailer, adapter: Swoosh.Adapters.Test
 
 # Disable swoosh api client as it is only required for production adapters
 config :swoosh, :api_client, false

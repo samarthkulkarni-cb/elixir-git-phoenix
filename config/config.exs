@@ -7,20 +7,23 @@
 # General application configuration
 import Config
 
-config :elixir_git_phoenix,
-  ecto_repos: [ElixirGitPhoenix.Repo],
+config :elixir_phoenix_zero_to_one,
+  ecto_repos: [ElixirPhoenixZeroToOne.Repo],
   generators: [timestamp_type: :utc_datetime]
 
 # Configures the endpoint
-config :elixir_git_phoenix, ElixirGitPhoenixWeb.Endpoint,
+config :elixir_phoenix_zero_to_one, ElixirPhoenixZeroToOneWeb.Endpoint,
   url: [host: "localhost"],
   adapter: Bandit.PhoenixAdapter,
   render_errors: [
-    formats: [html: ElixirGitPhoenixWeb.ErrorHTML, json: ElixirGitPhoenixWeb.ErrorJSON],
+    formats: [
+      html: ElixirPhoenixZeroToOneWeb.ErrorHTML,
+      json: ElixirPhoenixZeroToOneWeb.ErrorJSON
+    ],
     layout: false
   ],
-  pubsub_server: ElixirGitPhoenix.PubSub,
-  live_view: [signing_salt: "GL6lb659"]
+  pubsub_server: ElixirPhoenixZeroToOne.PubSub,
+  live_view: [signing_salt: "5/r3nDnd"]
 
 # Configures the mailer
 #
@@ -29,12 +32,12 @@ config :elixir_git_phoenix, ElixirGitPhoenixWeb.Endpoint,
 #
 # For production it's recommended to configure a different adapter
 # at the `config/runtime.exs`.
-config :elixir_git_phoenix, ElixirGitPhoenix.Mailer, adapter: Swoosh.Adapters.Local
+config :elixir_phoenix_zero_to_one, ElixirPhoenixZeroToOne.Mailer, adapter: Swoosh.Adapters.Local
 
 # Configure esbuild (the version is required)
 config :esbuild,
   version: "0.17.11",
-  elixir_git_phoenix: [
+  elixir_phoenix_zero_to_one: [
     args:
       ~w(js/app.js --bundle --target=es2017 --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
     cd: Path.expand("../assets", __DIR__),
@@ -44,7 +47,7 @@ config :esbuild,
 # Configure tailwind (the version is required)
 config :tailwind,
   version: "3.4.3",
-  elixir_git_phoenix: [
+  elixir_phoenix_zero_to_one: [
     args: ~w(
       --config=tailwind.config.js
       --input=css/app.css

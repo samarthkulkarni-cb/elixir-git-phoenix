@@ -1,4 +1,4 @@
-# ElixirGitPhoenix
+# ElixirPhoenixZeroToOne
 
 To start your Phoenix server:
 
