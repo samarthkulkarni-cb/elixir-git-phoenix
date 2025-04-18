@@ -1,4 +1,4 @@
-# ElixirPhoenixZeroToOne
+# Practicing Elixir, Phoenix & Git
 
 To start your Phoenix server:
 
